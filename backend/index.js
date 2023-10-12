@@ -12,7 +12,25 @@ app.get('/', (request, response) => {
     return response.status(234).send('Welcome To MERN Stack Tutorial');
 });
 
-// Route for saving a new book
+// Route for deleting a book by id
+app.delete('/books/:id', async (request, response) => {
+    try {
+        const { id } = request.params;
+        const result = await Book.findByIdAndDelete(id);
+
+        if(!result) {
+            return response.status(404).json({ message: 'Book not foud' });
+        }
+
+        return response.status(200).send({ message: 'Book deleted successfully' });
+
+    } catch(error) {
+        console.log(error.message);
+        return response.status(500).send({message : error.message});
+    }
+});
+
+// Route for updating a book
 app.put('/books/:id', async (request, response) => {
     try {
         if(!request.body.title || !request.body.author || !request.body.publishYear) {
