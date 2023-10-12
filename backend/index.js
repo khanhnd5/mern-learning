@@ -8,15 +8,15 @@ mongoose
 .connect(mongoDBURL)
 .then(() => {
     console.log('Database is connected');
-    app.get('/', (request, response) => {
-        console.log(request);
-        return response.status(234).send('Welcome To MERN Stack Tutorial');
+    app.listen(PORT, () => {
+        console.log(`App is listening to port: ${PORT}`);
     });
 })
 .catch((error) => {
     console.log(error);
 }); 
 
-app.listen(PORT, () => {
-    console.log(`App is listening to port: ${PORT}`);
+app.get('/', (request, response) => {
+    console.log(request);
+    return response.status(234).send('Welcome To MERN Stack Tutorial');
 });
