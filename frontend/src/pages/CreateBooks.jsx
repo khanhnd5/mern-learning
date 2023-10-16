@@ -37,7 +37,7 @@ const CreateBooks = () => {
       {loading ? <Spinner /> : ""}
       <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
-          <lable className="text-xl mr-4 text-gray-500">Title</lable>
+          <label className="text-xl mr-4 text-gray-500">Title</label>
           <input
             type="text"
             value={title}
@@ -46,7 +46,7 @@ const CreateBooks = () => {
           />
         </div>
         <div className="my-4">
-          <lable className="text-xl mr-4 text-gray-500">Author</lable>
+          <label className="text-xl mr-4 text-gray-500">Author</label>
           <input
             type="text"
             value={author}
@@ -55,7 +55,7 @@ const CreateBooks = () => {
           />
         </div>
         <div className="my-4">
-          <lable className="text-xl mr-4 text-gray-500">Publish Year</lable>
+          <label className="text-xl mr-4 text-gray-500">Publish Year</label>
           <input
             type="text"
             value={publishYear}
